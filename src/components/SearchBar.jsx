@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Paper, IconButton, Input } from '@mui/material';
+import { Paper, IconButton, Input, Stack } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
 const SearchBar = () => {
@@ -30,16 +30,18 @@ const SearchBar = () => {
         mr: { sm: 5 },
       }}
     >
-      <Input
-        disableUnderline
-        className='search-bar'
-        placeholder='Search...'
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <IconButton type='submit' sx={{ p: '10px', color: 'red' }}>
-        <SearchIcon />
-      </IconButton>
+      <Stack direction='row'>
+        <Input
+          disableUnderline
+          className='search-bar'
+          placeholder='Search...'
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <IconButton type='submit' sx={{ p: '10px', color: 'red' }}>
+          <SearchIcon />
+        </IconButton>
+      </Stack>
     </Paper>
   );
 };

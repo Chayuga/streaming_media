@@ -8,7 +8,7 @@ import logo from '../assets/logo.png';
 
 const Navbar = () => (
   <Stack
-    direction='row'
+    direction={{ xs: 'column', md: 'row' }}
     alignItems='center'
     p={2}
     sx={{
